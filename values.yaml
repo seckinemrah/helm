@@ -1,0 +1,52 @@
+#Secret-variable 
+secret:
+  value: lksjdfLKAJ43 
+  
+#StatefulSet-replicas
+replicas:
+  count: 2
+  
+#StatefulSet-env-name
+env: 
+  name: MYSQL_DATABASE
+  
+#StatefulSet-secretKeyRef
+name:
+  key: secret
+  
+#StatefulSet-secretKeyRef
+key:
+  passowrd: password
+  
+#StatefulSet-VolumeMounts
+volumename:
+  mysql-persistent-storage
+
+#Domain ingress
+ingress:
+  name: tls-ingress
+
+#Service
+service:
+  name: wordpress-mysql
+
+# MySQL image
+mysqlimage:
+  name: mysql:5.6
+
+
+#statefulset
+statefulset:
+  name: wordpress-mysql
+
+# WordPress version and tag
+wpimage:
+  name: wordpress:4.8
+
+# Deployment
+dpname:
+  name: wordpress-task
+
+#nodeportservice
+servicenodeport:
+  name: task-lb     
